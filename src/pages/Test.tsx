@@ -6,7 +6,7 @@ const Test = (props: any) => {
   return (
     <>
       <div>In Test page</div>
-      <div>Test1 Module: {JSON.stringify(props.test)}</div>
+      <div>Test1 Model: {JSON.stringify(props.test)}</div>
     </>
   );
 };
