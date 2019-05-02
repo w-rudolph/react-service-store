@@ -4,6 +4,7 @@ import { Route, Switch, HashRouter, Redirect } from 'react-router-dom';
 import AboutPage from './pages/About';
 import HomePage from './pages/Home';
 
+console.log(AboutPage)
 const App: React.FC = () => {
   return (
     <HashRouter>

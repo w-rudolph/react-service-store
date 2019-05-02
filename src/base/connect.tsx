@@ -6,32 +6,28 @@ type Injector = {
   inject: Subject;
   mapToProps: InjectorFn;
 };
-type InjectState = {
+type InjectedState = {
   injectState: any;
   injectUnsubs: Unsubscribe[];
 };
-
 export function connect(injectors: Injector[]) {
-  return function(WrappedComponent: React.FC) {
-    return class extends Component {
-      constructor(props: any, state: any) {
-        super(props, state);
-        this.state = {
-          injectState: {},
-          injectUnsubs: []
-        };
-      }
+  return function(WrappedComponent: React.ComponentType) {
+    return class Hoc extends Component {
+      state = {
+        injectState: {},
+        injectUnsubs: []
+      };
       componentWillMount() {
-        let newInjectState = {};
+        let newInjectedState = {};
         let injectUnsubs: Unsubscribe[] = [];
         injectors.forEach(injector => {
           const injectUnsub = injector.inject.subscribe((ret: any) => {
-            newInjectState = {
-              ...newInjectState,
+            newInjectedState = {
+              ...newInjectedState,
               ...injector.mapToProps(ret)
             };
             this.setState({
-              injectState: newInjectState
+              injectState: newInjectedState
             });
           });
           injectUnsubs.push(injectUnsub);
@@ -42,7 +38,7 @@ export function connect(injectors: Injector[]) {
       }
 
       componentWillUnmount() {
-        const injectState = this.state as InjectState;
+        const injectState = this.state as InjectedState;
         injectState.injectUnsubs.forEach(unsub => {
           unsub();
         });
@@ -52,7 +48,7 @@ export function connect(injectors: Injector[]) {
         return (
           <WrappedComponent
             {...this.props}
-            {...(this.state as InjectState).injectState}
+            {...(this.state as InjectedState).injectState}
           />
         );
       }
