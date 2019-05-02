@@ -1,4 +1,4 @@
-import { BehaviorSubject } from '../base/subject';
+import { BehaviorSubject } from 'react-store-service';
 
 export type TestModel = {
   a: number;

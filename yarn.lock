@@ -7085,6 +7085,10 @@ react-scripts@3.0.0:
   optionalDependencies:
     fsevents "2.0.6"
 
+react-store-service@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-store-service/-/react-store-service-0.2.0.tgz#3066940c84cf55a0ff67169b6482247cdee79167"
+
 react@16.8.6:
   version "16.8.6"
   resolved "https://registry.npm.taobao.org/react/download/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"

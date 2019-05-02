@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from '../base/connect';
+import { connect } from 'react-store-service';
 import testService, { TestModel } from '../services/test.service';
 
 const Test = (props: any) => {
