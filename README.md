@@ -1,3 +1,6 @@
-### React Service Store
+### Quick start
 
-React store based on Service(`Sub-Pub` mode)
+* `git clone https://github.com/w-rudolph/react-store-service-demo.git`
+* `yarn install`
+* `npm start`
+
