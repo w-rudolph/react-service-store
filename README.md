@@ -1,3 +1,5 @@
-### React Service Store
+### install and running
 
-React store based on Service(`Sub-Pub` mode)
+* `yarn install`
+* `npm start`
+
