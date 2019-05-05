@@ -8,6 +8,12 @@ type TodoProps = {
 };
 
 class Todo extends Component<TodoProps> {
+
+  componentWillMount() {
+    todoService.getTodoList();
+  }
+
+
   render() {
     const todoList = this.props.todoList;
     return (

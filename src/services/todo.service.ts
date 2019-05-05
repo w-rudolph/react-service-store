@@ -11,7 +11,6 @@ export class TodoService {
   detail$ = new BehaviorSubject<TodoItem>({});
 
   todoList: TodoItem[] = [];
-  todoDetail: TodoItem = {};
 
   addTodo(todo: TodoItem) {
     const idx = this.todoList.findIndex(t => t.id === todo.id);
@@ -20,6 +19,10 @@ export class TodoService {
     } else {
       this.todoList.push(todo);
     }
+  }
+
+  getTodoList() {
+    this.list$.next(this.todoList);
   }
 
   getTodoDetail(id: string) {
