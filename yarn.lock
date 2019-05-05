@@ -7085,9 +7085,9 @@ react-scripts@3.0.0:
   optionalDependencies:
     fsevents "2.0.6"
 
-react-store-service@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-store-service/-/react-store-service-0.2.0.tgz#3066940c84cf55a0ff67169b6482247cdee79167"
+react-store-service@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/react-store-service/-/react-store-service-0.3.1.tgz#3dc87814d63d26ed775896af0e78c10913a4c3f9"
 
 react@16.8.6:
   version "16.8.6"
